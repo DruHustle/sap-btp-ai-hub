@@ -42,7 +42,7 @@ const plugins = [
 ];
 
 export default defineConfig({
-  plugins,
+  plugins : [react()] ,
   base:  "/sap-btp-ai-hub/", // CRITICAL: Fix for GitHub Pages asset loading
   resolve: {
     alias: {
