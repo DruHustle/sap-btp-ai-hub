@@ -297,12 +297,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Author
 
-Created by **Manus AI** - AI-powered development platform
+Developedmby **Andrew Gotora**
 
 ---
 
 **Last Updated**: January 2026
 
-**Status**: ✅ Production Ready
 
 For the latest updates and announcements, follow this repository or check the [Releases](https://github.com/DruHustle/sap-btp-ai-hub/releases) page.
