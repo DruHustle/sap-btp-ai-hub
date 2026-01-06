@@ -42,7 +42,7 @@ const plugins = [
 ];
 
 export default defineConfig({
-  plugins : [react()] ,
+  plugins ,
   base:  '/sap-btp-ai-hub/', // CRITICAL: Fix for GitHub Pages asset loading
   resolve: {
     alias: {
@@ -51,12 +51,20 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+
+
   envDir: path.resolve(import.meta.dirname),
+  
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist"),
-    emptyOutDir: true,
-  },
+      // This tells Vite to put the final files in /dist at the project root
+      outDir: path.resolve(import.meta.dirname, "dist"),
+      emptyOutDir: true,
+      // Ensures assets are generated with relative paths
+      assetsDir: 'assets',
+    },
+
+
   server: {
     port: 3000,
     strictPort: false,
