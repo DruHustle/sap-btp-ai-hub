@@ -92,46 +92,6 @@ sap-btp-ai-hub/
 └── .gitignore                   # Git ignore rules
 ```
 
-## 🎨 Design System
-
-### Color Palette
-- **Primary**: SAP Blue (#0070F2) - Trust and technical competence
-- **Accent**: Warm Gold (#F5A623) - Highlights and CTAs
-- **Neutral**: Grays (charcoal to light silver) - Text and backgrounds
-
-### Typography
-- **Headlines**: Poppins (bold, geometric) - 600-700 weight
-- **Body**: Inter (clean, readable) - 400-600 weight
-
-### Components
-- Built with shadcn/ui for consistency
-- Tailwind CSS 4 for styling
-- Responsive design with mobile-first approach
-
-## 🌐 Deployment Options
-
-### Option 1: GitHub Pages (Recommended for Static Sites)
-
-See the [GitHub Pages Deployment Guide](#github-pages-deployment-guide) below.
-
-### Option 2: Vercel
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Click "New Project" and select your repository
-4. Vercel auto-detects the build settings
-5. Click "Deploy"
-
-### Option 3: Netlify
-
-1. Push your code to GitHub
-2. Go to [netlify.com](https://netlify.com)
-3. Click "New site from Git"
-4. Select your repository
-5. Set build command to `pnpm build`
-6. Set publish directory to `dist`
-7. Click "Deploy"
-
 ## 📖 GitHub Pages Deployment Guide
 
 ### Step 1: Create a GitHub Repository
