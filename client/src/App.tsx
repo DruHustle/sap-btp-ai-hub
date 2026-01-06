@@ -23,7 +23,7 @@ import { useHashLocation } from "wouter/use-hash-location";
 function Router() {
   return (
     
-    <WouterRouter base="/sap-btp-ai-hub" hook={useHashLocation}>
+    <WouterRouter hook={useHashLocation}>
       <Layout>
         <Switch>
           <Route path="/" component={Home} />

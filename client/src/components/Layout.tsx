@@ -168,8 +168,8 @@ export default function Layout({ children }: LayoutProps) {
               <h4 className="font-semibold mb-4">Connect</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href="https://github.com/DruHustle" target="_blank" rel="noreferrer" className="hover:text-primary">GitHub</a></li>
-                <li><a href="#" className="hover:text-primary">Twitter</a></li>
-                <li><a href="#" className="hover:text-primary">LinkedIn</a></li>
+                <li><a href="https://x.com/DruHustle" className="hover:text-primary">Twitter</a></li>
+                <li><a href="www.linkedin.com/in/andrew-gotora-72966068" className="hover:text-primary">LinkedIn</a></li>
               </ul>
             </div>
           </div>
