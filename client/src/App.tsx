@@ -11,6 +11,7 @@ import Tutorials from "./pages/Tutorials";
 import TutorialDetail from "./pages/TutorialDetail";
 import Architecture from "./pages/Architecture";
 import { Router as WouterRouter } from "wouter"; // 1. Import Router as WouterRouter
+import { useHashLocation } from "wouter/use-hash-location";
 
 
 /**
@@ -21,8 +22,8 @@ import { Router as WouterRouter } from "wouter"; // 1. Import Router as WouterRo
 
 function Router() {
   return (
-    // 2. Wrap everything in the Router with your base path
-    <WouterRouter base="/sap-btp-ai-hub">
+    
+    <WouterRouter base="/sap-btp-ai-hub" hook={useHashLocation}>
       <Layout>
         <Switch>
           <Route path="/" component={Home} />
