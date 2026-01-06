@@ -3,7 +3,7 @@ import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Download, Trash2, Database, Brain, Server, Globe, FileText, Cpu, Layers } from "lucide-react";
+import { Download, Trash2, Database, Brain, Server, Globe, FileText, Cpu, Layers, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import html2canvas from "html2canvas";
 
@@ -17,8 +17,6 @@ const COMPONENTS = [
   { id: "joule", name: "Joule", icon: Cpu, color: "bg-indigo-100 text-indigo-600 border-indigo-200" },
   { id: "btp", name: "BTP Subaccount", icon: Layers, color: "bg-yellow-100 text-yellow-600 border-yellow-200" },
 ];
-
-import { Sparkles } from "lucide-react";
 
 interface DraggableItemProps {
   id: string;

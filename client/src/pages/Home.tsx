@@ -89,7 +89,7 @@ export default function Home() {
             <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">
               Resources
             </a>
-            <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a href="/#about" className="text-gray-600 hover:text-gray-900 transition-colors">
               About
             </a>
           </div>
@@ -194,13 +194,13 @@ export default function Home() {
               return (
                 <div
                   key={tutorial.id}
-                  className="tutorial-card p-6 hover:scale-105 transition-transform duration-300"
+                  className="tutorial-card p-6 hover:scale-105 transition-transform duration-300 flex flex-col h-full"
                 >
                   <div className={`bg-gradient-to-br ${tutorial.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
                     <Icon className="w-6 h-6 text-gray-700" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{tutorial.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">{tutorial.description}</p>
+                  <p className="text-gray-600 mb-4 text-sm leading-relaxed flex-1">{tutorial.description}</p>
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex gap-3">
                       <span className="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium">
