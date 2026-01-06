@@ -10,6 +10,8 @@ import Playground from "./pages/Playground";
 import Tutorials from "./pages/Tutorials";
 import TutorialDetail from "./pages/TutorialDetail";
 import Architecture from "./pages/Architecture";
+import { Router as WouterRouter } from "wouter"; // 1. Import Router as WouterRouter
+
 
 /**
  * SAP BTP AI Learning Hub - Main App
@@ -19,18 +21,20 @@ import Architecture from "./pages/Architecture";
 
 function Router() {
   return (
-    <Layout>
-      <Switch>
-        <Route path="/" component={Home} />
-      <Route path="/tutorials" component={Tutorials} />
-      <Route path="/tutorials/:id" component={TutorialDetail} />
-      <Route path="/playground" component={Playground} />
-      <Route path="/architecture" component={Architecture} />
-        <Route path="/404" component={NotFound} />
-        {/* Final fallback route */}
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    // 2. Wrap everything in the Router with your base path
+    <WouterRouter base="/sap-btp-ai-hub">
+      <Layout>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/tutorials" component={Tutorials} />
+          <Route path="/tutorials/:id" component={TutorialDetail} />
+          <Route path="/playground" component={Playground} />
+          <Route path="/architecture" component={Architecture} />
+          <Route path="/404" component={NotFound} />
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
+    </WouterRouter>
   );
 }
 
