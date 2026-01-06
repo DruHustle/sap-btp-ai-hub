@@ -13,10 +13,6 @@ import Tutorials from "./pages/Tutorials";
 import TutorialDetail from "./pages/TutorialDetail";
 import Architecture from "./pages/Architecture";
 
-/**
- * SAP BTP AI Learning Hub - Main App
- */
-
 function AppRouter() {
   return (
     <WouterRouter hook={useHashLocation}>
@@ -35,7 +31,7 @@ function AppRouter() {
   );
 }
 
-function App() {
+export default function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
@@ -47,5 +43,3 @@ function App() {
     </ErrorBoundary>
   );
 }
-
-export default App;
