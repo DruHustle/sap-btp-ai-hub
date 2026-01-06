@@ -1,7 +1,9 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router as WouterRouter } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
+
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/Layout";
@@ -10,19 +12,13 @@ import Playground from "./pages/Playground";
 import Tutorials from "./pages/Tutorials";
 import TutorialDetail from "./pages/TutorialDetail";
 import Architecture from "./pages/Architecture";
-import { Router as WouterRouter } from "wouter"; // 1. Import Router as WouterRouter
-import { useHashLocation } from "wouter/use-hash-location";
-
 
 /**
  * SAP BTP AI Learning Hub - Main App
- * Design: Modern Enterprise Minimalism
- * Theme: Light mode (white background with SAP blue accents)
  */
 
-function Router() {
+function AppRouter() {
   return (
-    
     <WouterRouter hook={useHashLocation}>
       <Layout>
         <Switch>
@@ -45,10 +41,11 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster position="top-center" richColors />
-          <Router />
+          <AppRouter />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
 }
+
 export default App;

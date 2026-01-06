@@ -3,14 +3,12 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { defineConfig } from "vite";
-import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 import { VitePWA } from "vite-plugin-pwa";
 
 const plugins = [
   react(), 
   tailwindcss(), 
   jsxLocPlugin(), 
-  vitePluginManusRuntime(),
   VitePWA({
     registerType: 'prompt', // Changed from autoUpdate to prompt for better control
     includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],

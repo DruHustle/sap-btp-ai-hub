@@ -135,9 +135,8 @@ export default function Home() {
             </div>
             <div className="hidden md:flex justify-center">
               <img
-                src="/images/ai-core-illustration.png"
-                alt="SAP AI Core Architecture"
-                className="w-full max-w-md drop-shadow-lg"
+                src={`${import.meta.env.BASE_URL}images/ai-core-illustration.png`}
+                alt="AI Core illustration"
               />
             </div>
           </div>
