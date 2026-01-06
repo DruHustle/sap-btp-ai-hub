@@ -12,6 +12,7 @@ import Playground from "./pages/Playground";
 import Tutorials from "./pages/Tutorials";
 import TutorialDetail from "./pages/TutorialDetail";
 import Architecture from "./pages/Architecture";
+import About from "./pages/About";
 
 function AppRouter() {
   return (
@@ -23,6 +24,7 @@ function AppRouter() {
           <Route path="/tutorials/:id" component={TutorialDetail} />
           <Route path="/playground" component={Playground} />
           <Route path="/architecture" component={Architecture} />
+          <Route path="/about" component={About} />
           <Route path="/404" component={NotFound} />
           <Route component={NotFound} />
         </Switch>

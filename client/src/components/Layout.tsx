@@ -24,6 +24,7 @@ export default function Layout({ children }: LayoutProps) {
     { href: "/tutorials", label: "Tutorials" },
     { href: "/playground", label: "Playground" },
     { href: "/architecture", label: "Architecture" },
+    { href: "/about", label: "About" },
   ];
 
   return (
