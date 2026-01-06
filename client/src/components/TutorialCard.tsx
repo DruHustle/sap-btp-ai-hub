@@ -75,12 +75,12 @@ export default function TutorialCard({
             <Clock className="w-3.5 h-3.5 mr-1.5" />
             {duration}
           </div>
-          <Link href={`/tutorials/${id}`}>
-            <Button variant="ghost" size="sm" className="gap-1 hover:bg-primary hover:text-primary-foreground transition-colors">
+          <Button asChild variant="ghost" size="sm" className="gap-1 hover:bg-primary hover:text-primary-foreground transition-colors">
+            <Link href={`/tutorials/${id}`}>
               Start Learning
               <ArrowRight className="w-3.5 h-3.5" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </CardFooter>
       </Card>
     </motion.div>

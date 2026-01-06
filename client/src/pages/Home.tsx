@@ -213,10 +213,12 @@ export default function Home() {
                     </div>
                   </div>
                   <Button
+                    asChild
                     className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
-                    onClick={() => alert(`Tutorial "${tutorial.title}" - Coming soon!`)}
                   >
-                    Start
+                    <Link href={`/tutorials/${tutorial.id}`}>
+                      Start
+                    </Link>
                   </Button>
                 </div>
               );
