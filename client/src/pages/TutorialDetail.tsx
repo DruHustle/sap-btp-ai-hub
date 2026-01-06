@@ -39,7 +39,7 @@ export default function TutorialDetail() {
         // In a production environment, we would fetch specific markdown files
         // For this demo, we'll load the main TUTORIALS.md and parse out the specific tutorial
         // This is a workaround to avoid restructuring the entire project's data source right now
-        const response = await fetch("/TUTORIALS.md");
+        const response = await fetch(`${import.meta.env.BASE_URL}TUTORIALS.md`);
         
         if (!response.ok) {
           // Fallback if file is not in public root (it might be in src or elsewhere in dev)
