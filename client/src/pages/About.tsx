@@ -10,15 +10,16 @@ export default function About() {
       >
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">About This Learning Hub</h1>
         <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-          <p>
-            The SAP BTP AI Learning Hub is a comprehensive resource designed to help developers, architects, and business professionals master the art of building AI-powered business solutions on SAP Business Technology Platform.
-          </p>
-          <p>
-            Whether you're just starting your AI journey or looking to deepen your expertise, this hub provides hands-on tutorials, best practices, and real-world examples to accelerate your learning.
-          </p>
-          <p>
-            Our content is regularly updated to reflect the latest SAP BTP AI capabilities, including the Generative AI Hub, AI Core, Joule Studio, and Document AI services.
-          </p>
+            <p>
+              The SAP BTP AI Learning Hub is a comprehensive resource designed to help developers, architects, and business professionals master the art of building AI-powered business solutions on SAP Business Technology Platform.
+              Whether you're just starting your AI journey or looking to deepen your expertise, this hub provides hands-on tutorials, best practices, and real-world examples to accelerate your learning.
+            </p>
+            <p>
+              Our content is regularly updated to reflect the latest SAP BTP AI capabilities, including the Generative AI Hub, AI Core, Joule Studio, and Document AI services.
+            </p>
+            <p>
+              The Learning Hub was curated and developed by Andrew Gotora. Andrew Gotora is technology professional with diverse expertise including electronics, IoT, software engineering and AI.
+            </p>
           
           <div className="pt-8 border-t border-gray-100 mt-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
