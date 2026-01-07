@@ -80,13 +80,27 @@ export default function Home() {
             <span className="text-xl font-bold text-gray-900">SAP BTP AI Hub</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#tutorials" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a 
+              href="#/" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("tutorials")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
               Tutorials
             </a>
             <Link href="/playground" className="text-gray-600 hover:text-gray-900 transition-colors">
               Playground
             </Link>
-            <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a 
+              href="#/" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("resources")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
               Resources
             </a>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
@@ -303,8 +317,30 @@ export default function Home() {
             <div>
               <h4 className="text-white font-semibold mb-4">Learning Hub</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#tutorials" className="hover:text-white transition-colors">Tutorials</a></li>
-                <li><a href="#resources" className="hover:text-white transition-colors">Resources</a></li>
+                <li>
+                  <a 
+                    href="#/" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("tutorials")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="hover:text-white transition-colors"
+                  >
+                    Tutorials
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="#/" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("resources")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="hover:text-white transition-colors"
+                  >
+                    Resources
+                  </a>
+                </li>
                 <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
               </ul>
             </div>
