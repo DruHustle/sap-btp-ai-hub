@@ -123,7 +123,7 @@ export default function About() {
                     </a>
                   </Button>
                   <Button variant="outline" asChild className="gap-2 rounded-xl px-6 py-6 h-auto border-slate-200 hover:bg-slate-50">
-                    <a href="mailto:andrew.gotora@example.com">
+                    <a href="mailto:andrewgotora@yahoo.com">
                       <Mail className="w-5 h-5" />
                       Send a Message
                     </a>
