@@ -1,14 +1,8 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { ArrowRight, BookOpen, Code2, Zap, Brain, FileText, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, BookOpen, Code2, Zap, Brain, FileText, Users, Sparkles, ShieldCheck, Database } from "lucide-react";
 import { Link } from "wouter";
-
-/**
- * SAP BTP AI Learning Hub - Home Page
- * Design: Modern Enterprise Minimalism
- * Color Palette: SAP Blue (#0070F2) + Warm Gold (#F5A623)
- * Typography: Poppins (headlines) + Inter (body)
- */
 
 export default function Home() {
   const tutorials = [
@@ -19,7 +13,7 @@ export default function Home() {
       difficulty: "Beginner",
       duration: "15 min",
       icon: BookOpen,
-      color: "from-blue-50 to-blue-100",
+      color: "from-blue-50 to-blue-100 text-blue-600",
     },
     {
       id: 2,
@@ -28,7 +22,7 @@ export default function Home() {
       difficulty: "Beginner",
       duration: "20 min",
       icon: Zap,
-      color: "from-amber-50 to-amber-100",
+      color: "from-amber-50 to-amber-100 text-amber-600",
     },
     {
       id: 3,
@@ -37,7 +31,7 @@ export default function Home() {
       difficulty: "Intermediate",
       duration: "45 min",
       icon: Brain,
-      color: "from-purple-50 to-purple-100",
+      color: "from-purple-50 to-purple-100 text-purple-600",
     },
     {
       id: 4,
@@ -46,7 +40,7 @@ export default function Home() {
       difficulty: "Intermediate",
       duration: "50 min",
       icon: Users,
-      color: "from-green-50 to-green-100",
+      color: "from-green-50 to-green-100 text-green-600",
     },
     {
       id: 5,
@@ -55,7 +49,7 @@ export default function Home() {
       difficulty: "Intermediate",
       duration: "40 min",
       icon: FileText,
-      color: "from-red-50 to-red-100",
+      color: "from-red-50 to-red-100 text-red-600",
     },
     {
       id: 6,
@@ -64,260 +58,278 @@ export default function Home() {
       difficulty: "Advanced",
       duration: "60 min",
       icon: Code2,
-      color: "from-indigo-50 to-indigo-100",
+      color: "from-indigo-50 to-indigo-100 text-indigo-600",
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-        <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-              <Brain className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-900">SAP BTP AI Hub</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <a 
-              href="#/" 
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("tutorials")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Tutorials
-            </a>
-            <Link href="/playground" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Playground
-            </Link>
-            <a 
-              href="#/" 
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("resources")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Resources
-            </a>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">
-              About
-            </Link>
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-40"
-          style={{
-            backgroundImage: "url('/images/hero-bg.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="relative container py-20 md:py-32">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-                Master AI Business Solutions on <span className="text-blue-600">SAP BTP</span>
-              </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Learn hands-on how to build, deploy, and integrate AI-powered solutions using SAP Business Technology Platform. From foundational concepts to advanced implementations.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+      <section className="relative pt-20 pb-32 overflow-hidden bg-slate-900">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-[40%] -left-[10%] w-[70%] h-[70%] rounded-full bg-blue-600/20 blur-[120px]" />
+          <div className="absolute -bottom-[40%] -right-[10%] w-[70%] h-[70%] rounded-full bg-indigo-600/20 blur-[120px]" />
+        </div>
+        
+        <div className="container relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-4"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>The Future of Enterprise AI is Here</span>
+            </motion.div>
+            
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1]"
+            >
+              Master AI Solutions on <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">SAP BTP</span>
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed"
+            >
+              Learn hands-on how to build, deploy, and integrate AI-powered solutions using SAP Business Technology Platform. From foundational concepts to advanced implementations.
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+            >
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-7 text-lg rounded-xl flex items-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+                onClick={() => document.getElementById("tutorials")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Explore Tutorials
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+              <Link href="/playground">
                 <Button
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg flex items-center gap-2 transition-all hover:shadow-lg"
-                  onClick={() => document.getElementById("tutorials")?.scrollIntoView({ behavior: "smooth" })}
+                  size="lg"
+                  variant="outline"
+                  className="border-slate-700 text-white hover:bg-slate-800 px-8 py-7 text-lg rounded-xl"
                 >
-                  Explore Tutorials
-                  <ArrowRight className="w-5 h-5" />
+                  Try Playground
                 </Button>
-                <Link href="/playground">
-                  <Button
-                    variant="outline"
-                    className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg rounded-lg"
-                  >
-                    Try Playground
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="hidden md:flex justify-center">
-              <img
-                src={`${import.meta.env.BASE_URL}images/ai-core-illustration.png`}
-                alt="AI Core illustration"
-              />
-            </div>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Value Proposition */}
-      <section className="bg-gray-50 py-16 md:py-24">
+      <section className="py-24 bg-white">
         <div className="container">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">Why SAP BTP for AI?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12">
             {[
               {
                 title: "Enterprise Integration",
-                description: "Seamlessly integrate AI with your existing SAP systems and data.",
-                icon: "🔗",
+                description: "Seamlessly integrate AI with your existing SAP systems and data with production-ready patterns.",
+                icon: Sparkles,
+                color: "bg-blue-50 text-blue-600"
               },
               {
                 title: "Governance & Security",
-                description: "Built-in compliance, security, and governance for enterprise-grade AI.",
-                icon: "🔒",
+                description: "Built-in compliance, security, and governance for enterprise-grade AI implementations.",
+                icon: ShieldCheck,
+                color: "bg-indigo-50 text-indigo-600"
               },
               {
                 title: "Business Context",
-                description: "Leverage your business data to create contextual, accurate AI solutions.",
-                icon: "💼",
+                description: "Leverage your business data to create contextual, accurate AI solutions that matter.",
+                icon: Database,
+                color: "bg-slate-50 text-slate-600"
               },
             ].map((item, idx) => (
-              <Card
+              <motion.div
                 key={idx}
-                className="p-8 bg-white border border-gray-200 hover:shadow-lg transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="space-y-4"
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </Card>
+                <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mb-6`}>
+                  <item.icon className="w-7 h-7" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-justify">{item.description}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Tutorials Section */}
-      <section id="tutorials" className="py-20 md:py-32">
+      <section id="tutorials" className="py-24 bg-slate-50/50 border-y border-slate-100">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Hands-On Tutorials</h2>
-            <p className="text-xl text-gray-600">
-              Learn through practical, step-by-step guides covering everything from basics to advanced topics.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl space-y-4">
+              <h2 className="text-4xl font-bold text-slate-900">Hands-On Tutorials</h2>
+              <p className="text-lg text-slate-600">
+                Learn through practical, step-by-step guides covering everything from basics to advanced topics.
+              </p>
+            </div>
+            <Button variant="ghost" className="text-blue-600 hover:text-blue-700 font-bold gap-2" asChild>
+              <Link href="/tutorials">View all tutorials <ArrowRight className="w-4 h-4" /></Link>
+            </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {tutorials.map((tutorial) => {
               const Icon = tutorial.icon;
               return (
-                <div
-                  key={tutorial.id}
-                  className="tutorial-card p-6 hover:scale-105 transition-transform duration-300 flex flex-col h-full"
-                >
-                  <div className={`bg-gradient-to-br ${tutorial.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
-                    <Icon className="w-6 h-6 text-gray-700" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{tutorial.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed flex-1">{tutorial.description}</p>
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex gap-3">
-                      <span className="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-medium">
-                        {tutorial.difficulty}
-                      </span>
-                      <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
-                        {tutorial.duration}
-                      </span>
-                    </div>
-                  </div>
-                  <Button
-                    asChild
-                    className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
-                  >
-                    <Link href={`/tutorials/${tutorial.id}`}>
-                      Start
-                    </Link>
-                  </Button>
-                </div>
+                <motion.div key={tutorial.id} variants={itemVariants}>
+                  <Card className="group h-full border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+                    <CardContent className="p-8 flex flex-col h-full">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tutorial.color.split(' ').slice(0,2).join(' ')} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                        <Icon className={`w-6 h-6 ${tutorial.color.split(' ').pop()}`} />
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{tutorial.title}</h3>
+                      <p className="text-slate-600 mb-6 text-sm leading-relaxed flex-1 text-justify">{tutorial.description}</p>
+                      
+                      <div className="flex items-center justify-between pt-6 border-t border-slate-100">
+                        <div className="flex gap-2">
+                          <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">
+                            {tutorial.difficulty}
+                          </span>
+                          <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold">
+                            {tutorial.duration}
+                          </span>
+                        </div>
+                        <Button
+                          asChild
+                          variant="ghost"
+                          size="sm"
+                          className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 font-bold p-0"
+                        >
+                          <Link href={`/tutorials/${tutorial.id}`}>
+                            Start <ArrowRight className="ml-1 w-4 h-4" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Resources Section */}
-      <section id="resources" className="bg-gray-50 py-20 md:py-32">
+      <section id="resources" className="py-24 bg-white">
         <div className="container">
-          <h2 className="text-4xl font-bold text-gray-900 mb-16">Resources & Links</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
+            <h2 className="text-4xl font-bold text-slate-900">Resources & Links</h2>
+            <p className="text-lg text-slate-600">Expand your knowledge with official documentation and community resources.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
                 title: "Official SAP Documentation",
-                description: "Comprehensive guides and API references from SAP.",
+                description: "Comprehensive guides and API references from SAP AI Core and Generative AI Hub.",
                 url: "https://help.sap.com/docs/sap-ai-core",
                 icon: "📚",
               },
               {
                 title: "SAP BTP Trial Account",
-                description: "Get started with a free trial account to explore SAP BTP.",
+                description: "Get started with a free trial account to explore SAP BTP AI services today.",
                 url: "https://account.hanatrial.ondemand.com",
                 icon: "🚀",
               },
               {
                 title: "SAP Community",
-                description: "Connect with SAP experts and other developers.",
+                description: "Connect with SAP experts, ask questions, and share your AI journey.",
                 url: "https://community.sap.com",
                 icon: "👥",
               },
               {
                 title: "SAP Learning Hub",
-                description: "Structured learning paths and certification programs.",
+                description: "Structured learning paths and official certification programs for AI.",
                 url: "https://learning.sap.com",
                 icon: "🎓",
               },
             ].map((resource, idx) => (
-              <Card
+              <motion.div
                 key={idx}
-                className="p-8 bg-white border border-gray-200 hover:shadow-lg transition-all hover:border-blue-300"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
               >
-                <div className="text-4xl mb-4">{resource.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{resource.title}</h3>
-                <p className="text-gray-600 mb-4">{resource.description}</p>
-                <a
-                  href={resource.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
-                >
-                  Visit <ArrowRight className="w-4 h-4" />
-                </a>
-              </Card>
+                <Card className="p-8 border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all group">
+                  <div className="text-3xl mb-4 group-hover:scale-110 transition-transform inline-block">{resource.icon}</div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{resource.title}</h3>
+                  <p className="text-slate-600 mb-6 text-sm leading-relaxed text-justify">{resource.description}</p>
+                  <a
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-bold transition-colors"
+                  >
+                    Visit Resource <ArrowRight className="w-4 h-4" />
+                  </a>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 md:py-32">
-        <div className="container max-w-3xl">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">About This Learning Hub</h2>
-          <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-            <p>
-              The SAP BTP AI Learning Hub is a comprehensive resource designed to help developers, architects, and business professionals master the art of building AI-powered business solutions on SAP Business Technology Platform.
-              Whether you're just starting your AI journey or looking to deepen your expertise, this hub provides hands-on tutorials, best practices, and real-world examples to accelerate your learning.
-            </p>
-            <p>
-              Our content is regularly updated to reflect the latest SAP BTP AI capabilities, including the Generative AI Hub, AI Core, Joule Studio, and Document AI services.
-            </p>
-            <p>
-              The Learning Hub was curated and developed by Andrew Gotora. Andrew Gotora is technology professional with diverse expertise including electronics, IoT, software engineering and AI.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12">
+      <footer className="bg-slate-900 text-slate-400 py-20 border-t border-slate-800">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-12 mb-16">
+            <div className="col-span-2 space-y-6">
+              <div className="flex items-center gap-2">
+                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-xl font-bold text-white">SAP BTP AI Hub</span>
+              </div>
+              <p className="max-w-sm leading-relaxed">
+                The premier learning destination for mastering AI on SAP Business Technology Platform. Built for developers, by developers.
+              </p>
+            </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">Learning Hub</h4>
-              <ul className="space-y-2 text-sm">
+              <h4 className="text-white font-bold mb-6">Learning Hub</h4>
+              <ul className="space-y-4 text-sm">
                 <li>
                   <a 
                     href="#/" 
@@ -346,33 +358,17 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4">SAP Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="https://www.sap.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">SAP.com</a></li>
-                <li><a href="https://help.sap.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="https://community.sap.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Community</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Technologies</h4>
-              <ul className="space-y-2 text-sm">
-                <li>SAP AI Core</li>
-                <li>Generative AI Hub</li>
-                <li>Joule Studio</li>
-                <li>Document AI</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
-                <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a></li>
-                <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+              <h4 className="text-white font-bold mb-6">Connect</h4>
+              <ul className="space-y-4 text-sm">
+                <li><a href="https://github.com/DruHustle" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/andrew-gotora-72966068" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+                <li><a href="https://x.com/DruHustle" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2026 SAP BTP AI Learning Hub. All rights reserved.</p>
+          <div className="pt-8 border-t border-slate-800 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© {new Date().getFullYear()} SAP BTP AI Learning Hub. All rights reserved.</p>
+            <p>Built with ❤️ for the SAP Community</p>
           </div>
         </div>
       </footer>
