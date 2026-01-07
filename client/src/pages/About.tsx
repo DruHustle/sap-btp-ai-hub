@@ -95,9 +95,6 @@ export default function About() {
                     className="object-cover w-full h-full"
                   />
                 </div>
-                <div className="absolute bottom-2 right-2 bg-blue-600 p-2 rounded-full border-2 border-white shadow-lg">
-                  <Linkedin className="w-4 h-4 text-white" />
-                </div>
               </div>
 
               <div className="flex-1 space-y-6 text-center md:text-left">
