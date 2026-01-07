@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { BookOpen, Zap, Brain, Users, FileText, Code2, Search, Filter, Sparkles } from "lucide-react";
 import TutorialCard from "@/components/TutorialCard";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Certificate from "@/components/Certificate";
 import { useProgress } from "@/hooks/useProgress";

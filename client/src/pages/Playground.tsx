@@ -206,8 +206,9 @@ export default function Playground() {
                     </div>
                     <div className="p-6">
                       <CodeEditor 
-                        initialCode={PYTHON_EXAMPLES.generativeAI} 
+                        title="Generative AI Hub (Python)"
                         language="python" 
+                        defaultCode={PYTHON_EXAMPLES.generativeAI} 
                       />
                     </div>
                   </div>
@@ -227,8 +228,9 @@ export default function Playground() {
                   </div>
                   <div className="p-6">
                     <CodeEditor 
-                      initialCode={JAVASCRIPT_EXAMPLES.generativeAI} 
+                      title="Generative AI Hub (Node.js)"
                       language="javascript" 
+                      defaultCode={JAVASCRIPT_EXAMPLES.generativeAI} 
                     />
                   </div>
                 </div>
