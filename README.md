@@ -48,30 +48,6 @@ pnpm build
 
 This creates an optimized production build in the `dist/` directory.
 
-## 📁 Project Structure
-
-```
-sap-btp-ai-hub/
-├── client/
-│   ├── public/
-│   │   └── images/              # Visual assets (hero, illustrations, patterns)
-│   ├── src/
-│   │   ├── pages/
-│   │   │   ├── Home.tsx         # Main landing page
-│   │   │   └── NotFound.tsx     # 404 page
-│   │   ├── components/          # Reusable UI components
-│   │   ├── contexts/            # React contexts (theme, etc.)
-│   │   ├── hooks/               # Custom React hooks
-│   │   ├── lib/                 # Utility functions
-│   │   ├── App.tsx              # Main app component with routing
-│   │   ├── main.tsx             # React entry point
-│   │   └── index.css            # Global styles and design tokens
-│   └── index.html               # HTML template
-├── TUTORIALS.md                 # Comprehensive tutorial documentation
-├── README.md                    # This file
-├── package.json                 # Dependencies and scripts
-└── .gitignore                   # Git ignore rules
-```
 
 ## 📖 GitHub Pages Deployment Guide
 
@@ -145,45 +121,6 @@ This command:
 3. You should see a message: "Your site is published at `https://DruHustle.github.io/sap-btp-ai-hub`"
 4. Click the link to view your live website
 
-### Step 6: Automate Deployment with GitHub Actions (Optional)
-
-Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 10
-      
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'pnpm'
-      
-      - run: pnpm install
-      
-      - run: pnpm build
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-```
-
-Now, every push to `main` branch automatically deploys to GitHub Pages.
-
 ## 🔄 Continuous Updates
 
 The content in this learning hub is regularly updated to reflect the latest SAP BTP AI capabilities. To stay current:
@@ -202,10 +139,6 @@ We welcome contributions! To contribute:
 4. Commit: `git commit -m "Add your feature"`
 5. Push: `git push origin feature/your-feature`
 6. Open a Pull Request
-
-## 📝 Tutorial Content
-
-For detailed tutorial content, see [TUTORIALS.md](./TUTORIALS.md). This file contains comprehensive, step-by-step guides for all 6 tutorials with code examples, best practices, and troubleshooting tips.
 
 ## 🛠️ Technology Stack
 
