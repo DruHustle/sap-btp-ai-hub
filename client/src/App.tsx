@@ -7,6 +7,7 @@ import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/Layout";
+
 import Home from "./pages/Home";
 import Playground from "./pages/Playground";
 import Tutorials from "./pages/Tutorials";
