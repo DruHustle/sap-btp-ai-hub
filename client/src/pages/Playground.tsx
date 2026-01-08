@@ -114,10 +114,14 @@ async function generateEmbeddings(texts, model = 'text-embedding-3-large') {
 
 export default function Playground() {
   return (
-    <div className="min-h-screen bg-slate-50/50">
-      {/* Header Section */}
-      <div className="bg-slate-900 text-white border-b border-slate-800">
-        <div className="container py-16 md:py-24">
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Header Section - Blue Themed */}
+      <div className="bg-[#001A33] text-white border-b border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-[40%] -left-[10%] w-[70%] h-[70%] rounded-full bg-blue-600/10 blur-[120px]" />
+        </div>
+        
+        <div className="container py-16 md:py-24 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -132,7 +136,7 @@ export default function Playground() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-6xl font-bold tracking-tight"
             >
-              AI <span className="text-blue-400">Playground</span>
+              AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Playground</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -150,20 +154,20 @@ export default function Playground() {
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="api" className="space-y-12">
             <div className="flex justify-center">
-              <TabsList className="bg-white border border-slate-200 p-1 h-auto rounded-2xl shadow-sm">
-                <TabsTrigger value="api" className="px-8 py-3 rounded-xl data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all">
+              <TabsList className="bg-[#00264D] border border-white/10 p-1 h-auto rounded-2xl shadow-2xl">
+                <TabsTrigger value="api" className="px-8 py-3 rounded-xl data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all text-slate-400">
                   <div className="flex items-center gap-2">
                     <Zap className="w-4 h-4" />
                     <span>API Tester</span>
                   </div>
                 </TabsTrigger>
-                <TabsTrigger value="python" className="px-8 py-3 rounded-xl data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all">
+                <TabsTrigger value="python" className="px-8 py-3 rounded-xl data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all text-slate-400">
                   <div className="flex items-center gap-2">
                     <Braces className="w-4 h-4" />
                     <span>Python SDK</span>
                   </div>
                 </TabsTrigger>
-                <TabsTrigger value="javascript" className="px-8 py-3 rounded-xl data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all">
+                <TabsTrigger value="javascript" className="px-8 py-3 rounded-xl data-[state=active]:bg-blue-600 data-[state=active]:text-white transition-all text-slate-400">
                   <div className="flex items-center gap-2">
                     <Code2 className="w-4 h-4" />
                     <span>JavaScript SDK</span>
@@ -178,14 +182,14 @@ export default function Playground() {
               transition={{ delay: 0.2 }}
             >
               <TabsContent value="api" className="mt-0 focus-visible:outline-none">
-                <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-                  <div className="p-6 border-b border-slate-100 bg-slate-50/50 flex items-center gap-3">
+                <div className="bg-[#00264D] rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+                  <div className="p-6 border-b border-white/5 bg-white/5 flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-blue-600 text-white">
                       <Sparkles className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-900">Generative AI Hub Tester</h3>
-                      <p className="text-xs text-slate-500">Test prompts against SAP-managed LLM deployments</p>
+                      <h3 className="font-bold text-white">Generative AI Hub Tester</h3>
+                      <p className="text-xs text-slate-400">Test prompts against SAP-managed LLM deployments</p>
                     </div>
                   </div>
                   <APIPlayground />
@@ -194,14 +198,14 @@ export default function Playground() {
 
               <TabsContent value="python" className="mt-0 focus-visible:outline-none">
                 <div className="grid gap-8">
-                  <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-                    <div className="p-6 border-b border-slate-100 bg-slate-50/50 flex items-center gap-3">
+                  <div className="bg-[#00264D] rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+                    <div className="p-6 border-b border-white/5 bg-white/5 flex items-center gap-3">
                       <div className="p-2 rounded-lg bg-blue-600 text-white">
                         <Cpu className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className="font-bold text-slate-900">Python Implementation Patterns</h3>
-                        <p className="text-xs text-slate-500">Production-ready snippets for SAP AI Core</p>
+                        <h3 className="font-bold text-white">Python Implementation Patterns</h3>
+                        <p className="text-xs text-slate-400">Production-ready snippets for SAP AI Core</p>
                       </div>
                     </div>
                     <div className="p-6">
@@ -216,14 +220,14 @@ export default function Playground() {
               </TabsContent>
 
               <TabsContent value="javascript" className="mt-0 focus-visible:outline-none">
-                <div className="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-                  <div className="p-6 border-b border-slate-100 bg-slate-50/50 flex items-center gap-3">
+                <div className="bg-[#00264D] rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+                  <div className="p-6 border-b border-white/5 bg-white/5 flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-blue-600 text-white">
                       <Code2 className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-900">Node.js / JavaScript SDK</h3>
-                      <p className="text-xs text-slate-500">Integrate SAP AI into your CAP or web applications</p>
+                      <h3 className="font-bold text-white">Node.js / JavaScript SDK</h3>
+                      <p className="text-xs text-slate-400">Integrate SAP AI into your CAP or web applications</p>
                     </div>
                   </div>
                   <div className="p-6">

@@ -43,81 +43,53 @@
 }
 
 :root {
-  /* SAP BTP AI Learning Hub - Modern Enterprise Minimalism */
-  /* Primary: SAP Blue for trust and technical competence */
-  /* Accent: Warm Gold for CTAs and highlights */
+  /* SAP BTP AI Learning Hub - Dynamic Blue Theme */
   --primary: #0070F2;
   --primary-foreground: #ffffff;
   --sidebar-primary: #0070F2;
   --sidebar-primary-foreground: #ffffff;
   
-  /* Accent: Warm Gold */
-  --accent: #F5A623;
-  --accent-foreground: #ffffff;
+  /* Accent: Cyan/Teal for high contrast */
+  --accent: #00D1FF;
+  --accent-foreground: #001A33;
   
   /* Charts use blue gradient */
   --chart-1: #0070F2;
-  --chart-2: #0052CC;
+  --chart-2: #00D1FF;
   --chart-3: #003A99;
   --chart-4: #002666;
   --chart-5: #001333;
   
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
+  --radius: 0.75rem;
+  
+  /* New Blue-Shaded Backgrounds */
+  --background: #001A33; /* Deep Navy */
+  --foreground: #E6F0FF; /* Very Light Blue */
+  
+  --card: #00264D; /* Dark Blue */
+  --card-foreground: #E6F0FF;
+  
+  --popover: #00264D;
+  --popover-foreground: #E6F0FF;
+  
+  --secondary: #003366; /* Medium Dark Blue */
+  --secondary-foreground: #B3D1FF;
+  
+  --muted: #003366;
+  --muted-foreground: #80B3FF;
+  
+  --destructive: #FF4D4D;
+  --destructive-foreground: #ffffff;
+  
+  --border: #004080; /* Blue Border */
+  --input: #004080;
   --ring: #0070F2;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: #0070F2;
-}
-
-.dark {
-  --primary: #0070F2;
-  --primary-foreground: #ffffff;
-  --sidebar-primary: #0070F2;
-  --sidebar-primary-foreground: #ffffff;
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: #F5A623;
-  --accent-foreground: #ffffff;
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: #0070F2;
-  --chart-1: #0070F2;
-  --chart-2: #0052CC;
-  --chart-3: #003A99;
-  --chart-4: #002666;
-  --chart-5: #001333;
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
+  
+  --sidebar: #001A33;
+  --sidebar-foreground: #E6F0FF;
+  --sidebar-accent: #003366;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #004080;
   --sidebar-ring: #0070F2;
 }
 
@@ -144,57 +116,27 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-  }
-  
-  h1 {
-    @apply text-5xl font-bold leading-tight;
-  }
-  
-  h2 {
-    @apply text-4xl font-bold leading-snug;
-  }
-  
-  h3 {
-    @apply text-2xl font-semibold leading-snug;
+    @apply tracking-tight;
   }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-  
-  /* Custom card styling with subtle shadow */
+  /* Custom card styling with blue theme */
   .card-elevated {
-    @apply bg-card text-card-foreground rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+    @apply bg-card text-card-foreground rounded-xl border border-border shadow-lg hover:border-primary/50 transition-all duration-300;
   }
   
-  /* Tutorial card with gradient border effect */
+  /* Tutorial card with blue theme */
   .tutorial-card {
-    @apply relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300;
-    border: 1px solid #E8EEF7;
+    @apply relative bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300;
   }
   
   .tutorial-card::before {
@@ -204,7 +146,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #0070F2, #F5A623);
+    background: linear-gradient(90deg, #0070F2, #00D1FF);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -213,18 +155,15 @@
     opacity: 1;
   }
 
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
 }

@@ -67,32 +67,36 @@ export default function TutorialDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#001A33]">
         <div className="flex flex-col items-center gap-4">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-          <p className="text-slate-500 font-medium">Loading tutorial content...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400"></div>
+          <p className="text-slate-400 font-medium">Loading tutorial content...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 z-[60] bg-slate-100">
+      <div className="fixed top-0 left-0 w-full h-1 z-[60] bg-white/5">
         <motion.div 
-          className="h-full bg-blue-600"
+          className="h-full bg-blue-400"
           initial={{ width: 0 }}
           animate={{ width: completed ? "100%" : "30%" }}
         />
       </div>
 
-      {/* Header Section */}
-      <div className="bg-slate-900 text-white border-b border-slate-800">
-        <div className="container py-12 md:py-16">
+      {/* Header Section - Blue Themed */}
+      <div className="bg-[#001A33] text-white border-b border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-[40%] -left-[10%] w-[70%] h-[70%] rounded-full bg-blue-600/10 blur-[120px]" />
+        </div>
+        
+        <div className="container py-12 md:py-16 relative z-10">
           <div className="max-w-4xl mx-auto space-y-6">
             <Link href="/tutorials">
-              <Button variant="ghost" size="sm" className="text-slate-400 hover:text-white hover:bg-slate-800 -ml-2 gap-2">
+              <Button variant="ghost" size="sm" className="text-slate-400 hover:text-white hover:bg-white/5 -ml-2 gap-2">
                 <ArrowLeft className="w-4 h-4" />
                 Back to Tutorials
               </Button>
@@ -110,12 +114,12 @@ export default function TutorialDetail() {
                   </Badge>
                 )}
                 <div className="flex items-center gap-1.5 text-slate-400 text-sm ml-auto">
-                  <Clock className="w-4 h-4" />
+                  <Clock className="w-4 h-4 text-blue-400" />
                   <span>{readingTime} min read</span>
                 </div>
               </div>
               
-              <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white">
                 {content.split('\n')[0].replace('## ', '')}
               </h1>
             </div>
@@ -126,7 +130,7 @@ export default function TutorialDetail() {
       <div className="container py-12 md:py-20">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-1 gap-12">
-            <article className="prose prose-slate lg:prose-lg max-w-none prose-headings:text-slate-900 prose-p:text-slate-600 prose-p:leading-relaxed prose-p:text-justify prose-strong:text-slate-900 prose-code:text-blue-600 prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-800 prose-img:rounded-2xl prose-img:shadow-lg">
+            <article className="prose prose-invert lg:prose-lg max-w-none prose-headings:text-white prose-p:text-slate-400 prose-p:leading-relaxed prose-p:text-justify prose-strong:text-white prose-code:text-blue-400 prose-pre:bg-[#001A33] prose-pre:border prose-pre:border-white/5 prose-img:rounded-2xl prose-img:shadow-2xl">
               <Streamdown
                 components={{
                   code: ({ className, children, ...props }: any) => {
@@ -146,7 +150,7 @@ export default function TutorialDetail() {
               </Streamdown>
             </article>
 
-            {/* Quiz Section */}
+            {/* Quiz Section - Blue Themed */}
             {quizQuestions && (
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -155,27 +159,27 @@ export default function TutorialDetail() {
                 className="mt-16"
               >
                 {!showQuiz && !completed ? (
-                  <div className="p-10 bg-blue-50 rounded-3xl border border-blue-100 text-center space-y-6">
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-600 text-white shadow-lg shadow-blue-200">
+                  <div className="p-10 bg-[#00264D] rounded-3xl border border-white/5 text-center space-y-6 shadow-2xl">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-600 text-white shadow-lg shadow-blue-600/20">
                       <GraduationCap className="w-10 h-10" />
                     </div>
                     <div className="space-y-2">
-                      <h3 className="text-2xl font-bold text-slate-900">Knowledge Check</h3>
-                      <p className="text-slate-600 max-w-md mx-auto">
+                      <h3 className="text-2xl font-bold text-white">Knowledge Check</h3>
+                      <p className="text-slate-400 max-w-md mx-auto">
                         Ready to verify your understanding? Take a quick quiz to complete this tutorial.
                       </p>
                     </div>
-                    <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-6 rounded-xl text-lg font-bold shadow-lg shadow-blue-200" onClick={() => setShowQuiz(true)}>
+                    <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-6 rounded-xl text-lg font-bold shadow-lg shadow-blue-600/20" onClick={() => setShowQuiz(true)}>
                       Start Quiz
                     </Button>
                   </div>
                 ) : showQuiz ? (
-                  <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
-                    <div className="p-6 border-b border-slate-100 bg-slate-50/50 flex items-center gap-3">
+                  <div className="bg-[#00264D] rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+                    <div className="p-6 border-b border-white/5 bg-white/5 flex items-center gap-3">
                       <div className="p-2 rounded-lg bg-blue-600 text-white">
                         <Sparkles className="w-5 h-5" />
                       </div>
-                      <h3 className="font-bold text-slate-900">Tutorial Quiz</h3>
+                      <h3 className="font-bold text-white">Tutorial Quiz</h3>
                     </div>
                     <Quiz 
                       tutorialId={id} 
@@ -188,14 +192,14 @@ export default function TutorialDetail() {
                     />
                   </div>
                 ) : (
-                  <div className="p-10 bg-green-50 rounded-3xl border border-green-100 text-center space-y-4">
+                  <div className="p-10 bg-green-500/10 rounded-3xl border border-green-500/20 text-center space-y-4 shadow-2xl">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500 text-white">
                       <CheckCircle className="w-8 h-8" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900">Tutorial Completed!</h3>
-                    <p className="text-slate-600">You've mastered the concepts in this guide.</p>
+                    <h3 className="text-2xl font-bold text-white">Tutorial Completed!</h3>
+                    <p className="text-slate-400">You've mastered the concepts in this guide.</p>
                     <Link href="/tutorials">
-                      <Button variant="outline" className="mt-4 border-green-200 text-green-700 hover:bg-green-100">
+                      <Button variant="outline" className="mt-4 border-green-500/20 text-green-400 hover:bg-green-500/10">
                         Explore More Tutorials
                       </Button>
                     </Link>
@@ -204,14 +208,14 @@ export default function TutorialDetail() {
               </motion.div>
             )}
 
-            {/* Footer Actions */}
-            <div className="mt-20 pt-10 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6">
+            {/* Footer Actions - Blue Themed */}
+            <div className="mt-20 pt-10 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
               <div className="flex gap-3">
-                <Button variant="outline" size="lg" onClick={handleShare} className="rounded-xl gap-2 border-slate-200">
+                <Button variant="outline" size="lg" onClick={handleShare} className="rounded-xl gap-2 border-white/10 text-white hover:bg-white/5">
                   <Share2 className="w-4 h-4" />
                   Share
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => window.print()} className="rounded-xl gap-2 border-slate-200">
+                <Button variant="outline" size="lg" onClick={() => window.print()} className="rounded-xl gap-2 border-white/10 text-white hover:bg-white/5">
                   <Printer className="w-4 h-4" />
                   Print
                 </Button>
@@ -225,14 +229,14 @@ export default function TutorialDetail() {
                       markAsCompleted(id);
                       toast.success("Tutorial marked as completed!");
                     }}
-                    className="flex-1 sm:flex-none bg-slate-900 hover:bg-slate-800 text-white rounded-xl gap-2"
+                    className="flex-1 sm:flex-none bg-blue-600 hover:bg-blue-700 text-white rounded-xl gap-2 shadow-lg shadow-blue-600/20"
                   >
                     <CheckCircle className="w-4 h-4" />
                     Mark as Complete
                   </Button>
                 )}
                 <Link href="/tutorials" className="flex-1 sm:flex-none">
-                  <Button size="lg" variant="outline" className="w-full rounded-xl gap-2 border-slate-200">
+                  <Button size="lg" variant="outline" className="w-full rounded-xl gap-2 border-white/10 text-white hover:bg-white/5">
                     Next Tutorial
                     <ChevronRight className="w-4 h-4" />
                   </Button>
