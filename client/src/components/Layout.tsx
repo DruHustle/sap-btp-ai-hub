@@ -32,16 +32,16 @@ export default function Layout({ children }: LayoutProps) {
       {/* Navigation Bar - Blue Themed */}
       <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#001A33]/90 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
-          <Link href="/">
-            <div className="flex items-center gap-2 transition-opacity hover:opacity-80 cursor-pointer">
-              <div className="bg-blue-500/10 p-2 rounded-lg border border-blue-500/20">
-                <Brain className="w-6 h-6 text-blue-400" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">SAP BTP AI Hub</span>
+     <Link href="/">
+            <div className="flex items-center gap-3 transition-opacity hover:opacity-80 cursor-pointer">
+              <img
+                src="images/profile.jpg"
+                alt="Andrew Gotora"
+                className="w-10 h-10 rounded-full border-2 border-blue-500/50 object-cover"
+              />
+              <span className="text-xl font-bold tracking-tight text-white hidden sm:inline">SAP BTP AI Hub</span>
             </div>
-          </Link>
-
-          {/* Desktop Navigation */}
+          </Link>Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4">
             <a 
               href="https://andrewgotora.github.io/portifolio/" 
