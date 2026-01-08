@@ -32,7 +32,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Navigation Bar - Blue Themed */}
       <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#001A33]/90 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
-     <Link href="/">
+          <Link href="/">
             <div className="flex items-center gap-3 transition-opacity hover:opacity-80 cursor-pointer">
               <img
                 src="images/profile.jpg"
@@ -41,16 +41,19 @@ export default function Layout({ children }: LayoutProps) {
               />
               <span className="text-xl font-bold tracking-tight text-white hidden sm:inline">SAP BTP AI Hub</span>
             </div>
-          </Link>Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-4">
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-4">
             <a 
-              href="https://andrewgotora.github.io/portifolio/" 
+              href="https://druhustle.github.io/portifolio/" 
               className="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors mr-4 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20"
             >
               <ArrowLeft className="w-3 h-3" />
               Back to Portfolio
             </a>
-            <div className="flex items-center gap-6 mr-4">              {navLinks.map((link) => (
+            <div className="flex items-center gap-6 mr-4">
+              {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <div
                     className={`text-sm font-medium transition-colors hover:text-blue-400 cursor-pointer ${
@@ -100,15 +103,16 @@ export default function Layout({ children }: LayoutProps) {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-b border-white/5 bg-[#001A33]"
           >
-          <div className="container py-4 flex flex-col gap-4">
-                <a 
-                  href="https://andrewgotora.github.io/portifolio/" 
-                  className="flex items-center gap-2 text-sm font-bold text-blue-400 py-2 border-b border-white/5"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  Back to Portfolio
-                </a>
-                {navLinks.map((link) => (                <Link key={link.href} href={link.href}>
+            <div className="container py-4 flex flex-col gap-4">
+              <a 
+                href="https://druhustle.github.io/portifolio/" 
+                className="flex items-center gap-2 text-sm font-bold text-blue-400 py-2 border-b border-white/5"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Portfolio
+              </a>
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
                   <div
                     className={`text-sm font-medium py-2 transition-colors cursor-pointer ${
                       location === link.href ? "text-blue-400" : "text-slate-400"
@@ -182,7 +186,7 @@ export default function Layout({ children }: LayoutProps) {
               <ul className="space-y-2 text-sm text-slate-400">
                 <li><a href="https://github.com/DruHustle" target="_blank" rel="noreferrer" className="hover:text-blue-400">GitHub</a></li>
                 <li><a href="https://x.com/DruHustle" target="_blank" rel="noreferrer" className="hover:text-blue-400">Twitter</a></li>
-                <li><a href="www.linkedin.com/in/andrew-gotora-72966068" target="_blank" rel="noreferrer" className="hover:text-blue-400">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/andrew-gotora-72966068" target="_blank" rel="noreferrer" className="hover:text-blue-400">LinkedIn</a></li>
               </ul>
             </div>
           </div>
