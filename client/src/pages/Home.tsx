@@ -130,12 +130,12 @@ export default function Home() {
       </section>
 
       {/* Tutorials Section - Condensed Grid & Blue Themed */}
-      <section id="tutorials" className="py-16 bg-[#001A33] border-y border-white/5">
+      <section id="tutorials" className="py-16 bg-[#E0F2FE] border-y border-blue-100">
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold text-white mb-2">Hands-On Tutorials</h2>
-              <p className="text-slate-400">Practical guides covering everything from basics to advanced topics.</p>
+<h2 className="text-3xl font-bold text-slate-900 mb-2">Hands-On Tutorials</h2>
+	              <p className="text-slate-700">Practical guides covering everything from basics to advanced topics.</p>
             </div>
             <Button variant="ghost" className="text-blue-400 hover:text-blue-300 font-bold gap-2" asChild>
               <Link href="/tutorials">View all tutorials <ArrowRight className="w-4 h-4" /></Link>
@@ -146,25 +146,25 @@ export default function Home() {
             {tutorials.map((tutorial) => {
               const Icon = tutorial.icon;
               return (
-                <Card key={tutorial.id} className="group bg-[#00264D] border-white/5 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col">
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${tutorial.color.split(' ').slice(0,2).join(' ')} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <Icon className={`w-5 h-5 ${tutorial.color.split(' ').pop()}`} />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">{tutorial.title}</h3>
-                    <p className="text-slate-400 text-xs leading-relaxed mb-4 flex-grow">{tutorial.description}</p>
-                    
-                    <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                      <div className="flex gap-2">
-                        <span className="px-2 py-0.5 rounded-full bg-white/5 text-slate-400 text-[10px] font-bold uppercase">{tutorial.difficulty}</span>
-                        <span className="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase">{tutorial.duration}</span>
-                      </div>
-                      <Button asChild variant="ghost" size="sm" className="text-blue-400 hover:text-blue-300 font-bold p-0">
-                        <Link href={`/tutorials/${tutorial.id}`}>Start <ArrowRight className="ml-1 w-4 h-4" /></Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
+<Card key={tutorial.id} className="group bg-white border-blue-100 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col">
+	                  <CardContent className="p-6 flex flex-col h-full">
+	                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${tutorial.color.split(' ').slice(0,2).join(' ')} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+	                      <Icon className={`w-5 h-5 ${tutorial.color.split(' ').pop()}`} />
+	                    </div>
+	                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{tutorial.title}</h3>
+	                    <p className="text-slate-600 text-xs leading-relaxed mb-4 flex-grow">{tutorial.description}</p>
+	                    
+	                    <div className="flex items-center justify-between pt-4 border-t border-blue-50">
+	                      <div className="flex gap-2">
+	                        <span className="px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold uppercase">{tutorial.difficulty}</span>
+	                        <span className="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 text-[10px] font-bold uppercase">{tutorial.duration}</span>
+	                      </div>
+	                      <Button asChild variant="ghost" size="sm" className="text-blue-600 hover:text-blue-500 font-bold p-0">
+	                        <Link href={`/tutorials/${tutorial.id}`}>Start <ArrowRight className="ml-1 w-4 h-4" /></Link>
+	                      </Button>
+	                    </div>
+	                  </CardContent>
+	                </Card>
               );
             })}
           </div>
