@@ -1,5 +1,10 @@
 # SAP BTP AI Learning Hub - Complete Tutorial Guide
 
+**Version:** 2.0.0
+**Author:** Andrew Gotora
+**Email:** [andrewgotora@yahoo.com](mailto:andrewgotora@yahoo.com)
+**Last Updated**: January 9, 2026
+
 ## Overview
 
 This comprehensive guide provides hands-on tutorials for mastering AI business solutions on SAP Business Technology Platform (BTP). The tutorials progress from foundational concepts to advanced implementations, enabling developers and architects to build production-ready AI applications.

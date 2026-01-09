@@ -1,5 +1,10 @@
 # SAP BTP AI Learning Hub - Deployment Checklist
 
+**Version:** 2.0.0
+**Author:** Andrew Gotora
+**Email:** [andrewgotora@yahoo.com](mailto:andrewgotora@yahoo.com)
+**Last Updated**: January 9, 2026
+
 Use this checklist to ensure your website is properly deployed and functioning correctly.
 
 ## Pre-Deployment Verification

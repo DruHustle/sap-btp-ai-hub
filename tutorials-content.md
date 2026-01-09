@@ -1,5 +1,10 @@
 # SAP BTP AI Learning Hub - Tutorial Content
 
+**Version:** 2.0.0
+**Author:** Andrew Gotora
+**Email:** [andrewgotora@yahoo.com](mailto:andrewgotora@yahoo.com)
+**Last Updated**: January 9, 2026
+
 ## Tutorial 1: Getting Started with SAP BTP Trial
 
 **Difficulty**: Beginner | **Duration**: 15 minutes

@@ -1,5 +1,10 @@
 # Complete Guide: Deploying SAP BTP AI Learning Hub to GitHub Pages
 
+**Version:** 2.0.0
+**Author:** Andrew Gotora
+**Email:** [andrewgotora@yahoo.com](mailto:andrewgotora@yahoo.com)
+**Last Updated**: January 9, 2026
+
 This guide provides step-by-step instructions for deploying the SAP BTP AI Learning Hub website to GitHub Pages for permanent, free hosting.
 
 ## 📋 Prerequisites
