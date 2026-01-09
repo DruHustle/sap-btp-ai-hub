@@ -221,8 +221,8 @@ ${Object.entries(request.headers)
   return (
     <div className="w-full space-y-6 py-8">
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold text-foreground">Interactive API Playground</h2>
-        <p className="text-lg text-muted-foreground">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground px-2 sm:px-0">Interactive API Playground</h2>
+        <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-justify px-2 sm:px-0">
           Test REST and OData calls to SAP BTP AI API endpoints. Select an example or build your own request.
         </p>
       </div>

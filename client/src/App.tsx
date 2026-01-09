@@ -37,7 +37,7 @@ function AppRouter() {
 export default function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="dark" switchable={true}>
         <TooltipProvider>
           <Toaster position="top-center" richColors />
           <AppRouter />
