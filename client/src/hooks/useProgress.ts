@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { safeLocalStorage } from "@/lib/storage";
 
 interface Progress {
   completedTutorials: number[];
@@ -7,14 +8,14 @@ interface Progress {
 
 export function useProgress() {
   const [progress, setProgress] = useState<Progress>(() => {
-    const saved = localStorage.getItem("sap-btp-ai-hub-progress");
+    const saved = safeLocalStorage.getItem("sap-btp-ai-hub-progress");
     return saved
       ? JSON.parse(saved)
       : { completedTutorials: [], lastVisited: null };
   });
 
   useEffect(() => {
-    localStorage.setItem("sap-btp-ai-hub-progress", JSON.stringify(progress));
+    safeLocalStorage.setItem("sap-btp-ai-hub-progress", JSON.stringify(progress));
   }, [progress]);
 
   const markAsCompleted = (tutorialId: number) => {
