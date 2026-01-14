@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { BarChart3, Users, BookOpen, TrendingUp, Activity, ShieldCheck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function Analytics() {
+export default function AnalyticsPage() {
   const metrics = [
     {
       title: "User Engagement",

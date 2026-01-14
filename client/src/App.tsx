@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -17,7 +18,7 @@ import Tutorials from "./pages/Tutorials";
 import TutorialDetail from "./pages/TutorialDetail";
 import Architecture from "./pages/Architecture";
 import About from "./pages/About";
-import Analytics from "./pages/Analytics";
+import AnalyticsPage from "./pages/AnalyticsPage";
 
 function AppRouter() {
   const { loading } = useAuth();
@@ -77,6 +78,7 @@ export default function App() {
           <TooltipProvider>
             <Toaster position="top-center" richColors />
             <AppRouter />
+            <Analytics />
           </TooltipProvider>
         </AuthProvider>
       </ThemeProvider>
