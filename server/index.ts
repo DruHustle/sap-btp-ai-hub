@@ -14,7 +14,10 @@ const __dirname = path.dirname(__filename);
 async function startServer() {
   const app = express();
   app.use(express.json());
-  app.use(cors());
+  app.use(cors({
+    origin: process.env.ALLOWED_ORIGIN || 'http://localhost:5173',
+    credentials: true
+  }));
   
   const server = createServer(app);
 
@@ -91,4 +94,6 @@ async function startServer() {
   });
 }
 
-startServer().catch(console.error);
+startServer().catch((err) => {
+  console.error("Failed to start server:", err.message);
+});
