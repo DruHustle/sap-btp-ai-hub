@@ -1,4 +1,4 @@
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -54,7 +54,7 @@ function AppRouter() {
           <Layout><About /></Layout>
         </Route>
         <Route path="/analytics">
-          <Layout><Analytics /></Layout>
+          <Layout><AnalyticsPage /></Layout>
         </Route>
 
         {/* Auth Routes */}
@@ -78,7 +78,7 @@ export default function App() {
           <TooltipProvider>
             <Toaster position="top-center" richColors />
             <AppRouter />
-            <Analytics />
+            <VercelAnalytics />
           </TooltipProvider>
         </AuthProvider>
       </ThemeProvider>
